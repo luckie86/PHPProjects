@@ -19,7 +19,7 @@ $(document).ready(function() {
     $.ajax({
       type: "POST",
 	  dataType: "json",
-      url: "http://localhost/dev/phpProjects/naloga3/test.php",
+      url: "http://localhost/dev/phpProjects/naloga2/test.php",
       data: {
         "username" : name,
         "useremail" : email,
