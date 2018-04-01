@@ -1,9 +1,10 @@
 <?php
 
-  session_start();
+session_start();
 
-  $_SESSION["favcolor"] = "green";
+ ?>
 
+<?php
 
   $email   = $_POST["email"];
   $password  = $_POST["password"];
@@ -13,10 +14,11 @@
     "password" => $password,
     "mobile" => $mobile
     );
+    echo json_encode($data);
+
+
       $_SESSION["email"] = $email;
       $_SESSION["password"] = $password;
       $_SESSION["mobile"] = $mobile;
-
-      echo json_encode($data);
 
 ?>

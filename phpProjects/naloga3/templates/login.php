@@ -1,22 +1,25 @@
-<<?php
+<?php
 
 session_start();
 
-$emailS = $_SESSION["email"];
-$passwordS = $_SESSION["password"];
+?>
+
+<?php
 
 $emailP   = $_POST["email"];
 $passwordP  = $_POST["password"];
 
+$emailS = $_SESSION["email"];
+$passwordS = $_SESSION["password"];
+
 if ($emailS == $emailP && $passwordS == $passwordP) {
   $data = array(
       "email"  => $emailP,
-      "password"   => $passwordP,
+      "password"   => $passwordP
       );
     echo json_encode($data);
-    http_redirect("user.html");
 } else {
-  http_redirect("guest.html")
+    exit;
 }
 
  ?>

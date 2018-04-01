@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  console.log("start");
-  $("#targetform").on("submit", function(event) {
+
+  $("#targetform2").on("submit", function(event) {
     event.preventDefault();
     var email = $("#email").val();
     var password = $("#password").val();
-
+    console.log("start");
     $.ajax({
       type: "POST",
 	    dataType: "json",
@@ -14,10 +14,14 @@ $(document).ready(function() {
         "password" : password
       },
       success : function(data){
-        console.log(data);
-        $("#result2").append("Hello " + data["email"] + "</br>" +
-        "Your are successfuly logged in: ");
-    }
+      console.log("Gre v sucess");
+      var url = "../templates/user.html";
+      $(location).attr('href', url);
+    },
+      error: function () {
+        var url = "../templates/guest.html";
+        $(location).attr('href', url);
+      }
     });
   });
 });
